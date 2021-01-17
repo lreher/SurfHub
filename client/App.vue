@@ -3,9 +3,7 @@
     <!-- header -->
     <div class='app-header'>
       <div>
-        <h2>Tempo</h2>
-
-        <button v-on:click="playSound"></button>
+        <h2>SurfHub</h2>
       </div>
     </div>
 
@@ -15,32 +13,15 @@
 </template>
 
 <script>
-var { Howl, Howler} = require('howler');
 
 export default {
   data: function () {
       return {
-          sound: null
       }
   },
 
   mounted: function() {
     console.log('mounted');
-    
-    this.sound = new Howl({
-      src: ['sounds/drum.mp3'],
-      html5: true, // A live stream can only be played through HTML5 Audio.
-      format: ['mp3']
-    });
-
-    setInterval(() => { this.playSound() }, 100);
-  },
-  methods: {
-    playSound: function() {
-
-      console.log('playihng')
-      this.sound.play();
-    }
   }
 }
 </script>

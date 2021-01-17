@@ -27,20 +27,6 @@ module.exports = function(router) {
     return;
   });
 
-  // MP3
-  router.get('/sounds/*', (request, response, params) => {
-    console.log(request.url);
-    // serveFile(response, '../public' + request.url);
-
-    var resolvedPath = path.resolve(__dirname, '../public' + request.url);
-
-    var file = fs.readFileSync(resolvedPath);
-
-    response.writeHead(200, { 'Content-Type': 'audio/mp3' });
-    response.end(file);
-    return;
-  });
-
 }
 
 function serveFile(response, servePath) {
